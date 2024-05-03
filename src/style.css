@@ -1,0 +1,326 @@
+
+main{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+#weeklyTask{
+  background-color: #fafbfd; 
+  width: 30%;
+  height: 800%;
+  margin: 0;
+  padding-left: 2rem;
+}
+#head{
+  padding: 2rem 0 10px 10px;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.addWeeklyTask{
+  border-radius: 77% 26% 49% 51% / 63% 24% 89% 36% ;
+  height: 2rem;
+  width: 2rem;
+  background-color: #f8d57e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+#taskly{
+  color: black;
+  font-weight: bold;
+  padding: 5px; 
+}
+
+#title{
+  font-size: 20px;
+  /* margin-right: 9rem; */
+}
+#viewAllWeekly{
+  color: #f8d57e;
+  font-weight: bold;
+  margin-right: 9rem;
+}
+#viewAllWeekly:hover{
+  cursor: pointer;
+}
+
+#titleTest{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#weeklyTaskContent{
+  margin-top: 2rem;
+}
+
+.weeklyTask , .addWeeklyTaskDiv {
+  display: flex;
+  background-color: white;
+  /* margin-right: 130px; */
+  margin-bottom: 10px;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
+.weeklyTaskDp{
+  background-color: #f8d57e;
+  height: 60px;
+  width: 60px;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.weeklyTaskDp i{
+  margin-top: 15px;
+}
+.weeklyTaskDp:hover{
+  cursor: pointer;
+}
+.date{
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 6px;
+}
+.taskType{
+  background-color: #f4b860;
+  border-radius: 9px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 20px 5px 20px ;
+  width: 60px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.taskDescription{
+  color: rgb(54, 54, 55);
+}
+
+.content{
+  margin-left: 1.3rem;
+}
+
+#addWeeklyTaskbtn{
+  background-color: #f8d57e;
+  height: 50px;
+  width: 50px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px 36px 5px 5px ;
+  border: none;
+}
+
+.addWeeklyTaskDiv{
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.addWeeklyTaskDiv h3{
+  margin-left: 15px;
+}
+
+#monthControl{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+#weeks{
+  margin-right: 110px;
+  color: #f8d57e;
+  font-weight: bold;
+  font-size: 18px;
+}
+.calendar {
+    background-color: #ffffff;
+    margin-left: 30px;
+    padding: 5px;
+  border-radius: 10px;
+  }
+  .calendar th,
+  .calendar td {
+    padding: 6px;
+    text-align: center;
+  }
+  .calendar th {
+    color:#f8d57e;
+
+  }
+  .highlight {
+    background-color:#f8d57e;
+    
+  }
+  td{
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+  }
+
+#leftMonth , #rightMonth {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+button:hover{
+  cursor: pointer;
+}
+#weeklyTaskContent{
+  margin-right: 8rem;
+}
+
+
+
+#midSection{
+  width: 40%;
+}
+
+#fixedDiv{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0 10px 10px;
+
+}
+#fixed{
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+#todayDate{
+  color: #f8d57e;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.completedTask{
+  background-color: #f8d57e;
+}
+
+.cardDiv{
+  margin: 10px 6rem 0 7rem;
+  border-radius: 10px;
+  /* padding-left: 20px; */
+  padding: 8px 8px 8px 20px;
+}
+.taskContainer{
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  
+}
+
+.todayDp{
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  text-align: center;
+  margin: 10px;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+.incompleteTask{
+  background-color: #fafbfd;
+}
+.taskName{
+  width: 16rem;
+  text-align: center;
+}
+.taskTime{
+  text-align: right;
+}
+
+ul{
+  margin-left: 40%;
+}
+.todayDescription{
+  width: 50%;
+  margin-left: 25%;
+}
+
+/* third section styling */
+
+
+#profile{
+  margin-top: 2rem;
+  padding: 10px;
+  display: flex;
+  /* justify-content: space-evenly; */
+
+}
+
+#userName{
+  font-size: 1.3rem;
+  font-weight: 500;
+  width: 12rem;
+}
+#mySettings{
+  border: none;
+  background-color: transparent;
+  color: #f8d57e;
+  font-weight: bolder;
+  font-size: 0.9rem;
+}
+
+#userPic{
+  width: 50px;
+  height: 50px;
+  border-radius: 77% 26% 49% 51% / 63% 24% 89% 36% ;
+   
+}
+
+.cardSec{
+  background-color: #fafbfd;
+  width: 12rem;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 10px;
+}
+#music{
+  width: 20rem;
+  height: 12rem;
+}
+#clock{
+  /* padding: 20px; */
+}
+#timeSec{
+  font-size: 2rem;
+  text-align: left;
+  
+}
+
+#weather{
+  margin-top: 10px;
+  font-size: 18px;
+}
+#taskSection img{
+  width: 100px;
+  /* height: 100px; */
+  mix-blend-mode: multiply;
+}
+
+#taskSection p {
+  padding-top: 15px;
+}
+
+#taskSection h3{
+  font-size: 30px;
+}

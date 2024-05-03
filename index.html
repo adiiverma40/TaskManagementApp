@@ -1,14 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management</title>
-    <link rel="shortcut icon" href="src/to-do-list.png" type="image/x-icon">
-    <link rel="stylesheet" href="src/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="src/to-do-list.png" type="image/x-icon">
+  <link rel="stylesheet" href="src/style.css">
 </head>
+
 <body>
-    
+  <main>
+    <section id="weeklyTask">
+      <div id="head">
+        <button class="addWeeklyTask">+</button>
+        <span id="taskly">taskly</span><br>
+      </div>
+      <div id="titleTest">
+        <p id="title">Weekly Pinned</p>
+        <p id="viewAllWeekly">View All</p>
+      </div>
+      <div id="weeklyTaskContent">
+        <div class="weeklyTask">
+          <span class="weeklyTaskDp"><i class="fa-solid fa-user-doctor"></i></span>
+          <div class="content">
+            <h3 class="weeklyTaskHeading">Call doctor for test</h3>
+            <p class="date">15 Mar 2020-9:00AM</p>
+            <p class="taskType">Personal</p>
+            <p class="taskDescription">Ask for blood tests and GYM certificate.</p>
+          </div>
+        </div>
+        <div class="weeklyTask">
+          <span class="weeklyTaskDp"><i class="fa-solid fa-user-doctor"></i></span>
+          <div class="content">
+            <h3 class="weeklyTaskHeading">Beatrice's bday</h3>
+            <p class="date">22 Mar 2020</p>
+          </div>
+        </div>
+        <div class="addWeeklyTaskDiv">
+          <button id="addWeeklyTaskbtn">+</button>
+          <h3 class="weeklyTaskHeading">Add new Weekly pin</h3>
+        </div>
+      </div>
+      <div id="calender">
+        <div id="monthControl">
+          <h3>March, 2020 </h3>
+          <button id="leftMonth">
+            <i class="fa-solid fa-arrow-left">
+            </i>
+          </button>
+          <button id="rightMonth">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <p id="weeks">Two Weeks</p>
+        </div>
+        <div id="caldiv">
+          <table class="calendar">
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td class="highlight">11</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="midSection">
+      <div id="fixedDiv">  
+        <p id="fixed">Today's Schedule</p>
+        <button style="margin-right: 3rem; width: 50px; height: 50px;" class="addWeeklyTask">+</button>
+      </div>
+      <div id="todayDate">
+        <p id="dateText">Thursday 11</p>
+        <button  style="font-size: 10px; margin-left: 6px; width: 20px; height: 20px;" id="leftMonth">
+          <i class="fa-solid fa-arrow-left">
+          </i>
+        </button>
+        <button style="font-size: 10px; margin-left: 6px; width: 20px; height: 20px;" id="rightMonth">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <div id="todaySchedule">
+        <div class="completedTask cardDiv">
+          
+          <div class="taskContainer">
+            <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
+          <p class="taskName">Wake up Buddy </p>
+          <p class="taskTime">7:00 AM</p>
+        </div>
+        </div>
+        <div class="completedTask  cardDiv">
+                    <div class="taskContainer">
+          <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
+<p class="taskName">Morning Yoga </p>
+          <p class="taskTime">8:00 AM</p>
+        </div>
+        </div>
+        <div class="incompleteTask cardDiv">
+                    <div class="taskContainer">
+          <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
+<p class="taskName">Morning Yoga </p>
+          <p class="taskTime">8:00 AM</p>
+          </div>
+          <ul>
+            <li>Squat 10×3 </li>
+            <li>Push up 10×3</li>
+            <li>Push up 10×3</li>
+          </ul>
+      </div>
+      <div class="incompleteTask cardDiv">
+                <div class="taskContainer">
+        <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
+<p class="taskName">shift project kick off pt.1  </p>
+        <p class="taskTime">10:00 AM</p>
+        </div>
+        <p class="todayDescription">Zoom call, kick off with Elena And Jardan from Shift</p>
+
+    </div>
+    <div class="incompleteTask cardDiv">
+            <div class="taskContainer">
+      <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
+<p class="taskName">Skype Sushi</p>
+      <p class="taskTime">12:30 AM</p>
+      </div>
+      <p class="todayDescription">Lunch with Ally, fight this quarantine with humor!</p>
+  </div>
+  
+  <div class="incompleteTask cardDiv">
+        <div class="taskContainer">
+    <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
+<p class="taskName">Dribbble Shot</p>
+    <p class="taskTime">2:00 PM</p>
+    </div>
+    <p class="todayDescription">Working a new shot !!</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <section id="userSection">
+      <div id="profile">
+        <div id="set">
+        <p id="userName">
+          Mark Collins
+          
+        </p>
+        <p id="mySettings">My settings</p>
+      </div>
+        <img src="https://avatars.githubusercontent.com/u/146183407?s=400&u=c10afae4a7dcf6111bb84f8b00ea94d1d85820ce&v=4" alt="User Picture" id="userPic">
+      </div>
+      <div id="music" class="cardSec">
+
+
+      </div>
+      <div id="clock" class="cardSec" >
+        <p id="timeSec">10:10 AM</p>
+        <p id="weather"><i class="fa-solid fa-cloud-sun"></i>Now is almost Sunny</p>
+        
+      </div>
+      <div id="taskSection" class="cardSec">
+        <h3>Unsleash the freelancer super power </h3>
+        <p id="description">
+          Unlimited task, premium features and much more
+        </p>
+        <img src="src/Screenshot_2024-05-04_001418_upscaled.png" alt="freelancer">
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
 
 
 
@@ -47,6 +273,7 @@
 
 
 
-    <script src="src/script.js"></script>
+  <script src="src/script.js"></script>
 </body>
+
 </html>
