@@ -1,3 +1,13 @@
+:root{
+  --buttonBgColor:#f8d57e;
+  --whiteColor:white;
+  --bluishWhiteColor:#fafbfd;
+  --cardDivBg:white;
+  --cardDivColor:black;
+  --colorBlack:black;
+  --weeklyTaskBg:white;
+}
+
 
 main{
   margin: 0;
@@ -5,7 +15,7 @@ main{
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 *{
@@ -13,7 +23,7 @@ main{
   margin: 0;
 }
 #weeklyTask{
-  background-color: #fafbfd; 
+  background-color: var(--bluishWhiteColor); 
   width: 30%;
   height: 800%;
   margin: 0;
@@ -29,8 +39,8 @@ main{
   border-radius: 77% 26% 49% 51% / 63% 24% 89% 36% ;
   height: 2rem;
   width: 2rem;
-  background-color: #f8d57e;
-  color: white;
+  background-color:var(--buttonBgColor);
+  color: var(--whiteColor);
   font-weight: bold;
   border: none;
   outline: none;
@@ -46,7 +56,7 @@ main{
   /* margin-right: 9rem; */
 }
 #viewAllWeekly{
-  color: #f8d57e;
+  color: var(--buttonBgColor);
   font-weight: bold;
   margin-right: 9rem;
 }
@@ -66,14 +76,18 @@ main{
 
 .weeklyTask , .addWeeklyTaskDiv {
   display: flex;
-  background-color: white;
+  color: var(--colorBlack);
+  background-color: var(--weeklyTaskBg);
   /* margin-right: 130px; */
   margin-bottom: 10px;
   padding: 1.5rem;
   border-radius: 20px;
 }
+/* .weeklyTask{
+
+} */
 .weeklyTaskDp{
-  background-color: #f8d57e;
+  background-color: var(--buttonBgColor);
   height: 60px;
   width: 60px;
   font-size: 2rem;
@@ -96,7 +110,7 @@ main{
 .taskType{
   background-color: #f4b860;
   border-radius: 9px;
-  color: white;
+  color: var(--whiteColor);
   font-size: 14px;
   font-weight: bold;
   padding: 5px 20px 5px 20px ;
@@ -106,7 +120,7 @@ main{
   margin-bottom: 20px;
 }
 .taskDescription{
-  color: rgb(54, 54, 55);
+  color: var(--colorBlack);
 }
 
 .content{
@@ -114,7 +128,7 @@ main{
 }
 
 #addWeeklyTaskbtn{
-  background-color: #f8d57e;
+  background-color: var(--buttonBgColor);
   height: 50px;
   width: 50px;
   font-size: 1rem;
@@ -141,14 +155,20 @@ main{
   margin: 10px 0 10px 0;
 }
 
+#monthControl h3:hover{
+  cursor: pointer;
+}
 #weeks{
   margin-right: 110px;
-  color: #f8d57e;
+  color: var(--buttonBgColor);
   font-weight: bold;
   font-size: 18px;
 }
+#weeks:hover{
+  cursor: pointer;
+}
 .calendar {
-    background-color: #ffffff;
+    background-color: var(--whiteColor);
     margin-left: 30px;
     padding: 5px;
   border-radius: 10px;
@@ -159,11 +179,11 @@ main{
     text-align: center;
   }
   .calendar th {
-    color:#f8d57e;
+    color:var(--buttonBgColor);
 
   }
   .highlight {
-    background-color:#f8d57e;
+    background-color:var(--buttonBgColor);
     
   }
   td{
@@ -203,7 +223,7 @@ button:hover{
 }
 
 #todayDate{
-  color: #f8d57e;
+  color: var(--buttonBgColor);
   font-size: 40px;
   display: flex;
   align-items: center;
@@ -211,7 +231,7 @@ button:hover{
 }
 
 .completedTask{
-  background-color: #f8d57e;
+  background-color: var(--buttonBgColor);
 }
 
 .cardDiv{
@@ -219,6 +239,8 @@ button:hover{
   border-radius: 10px;
   /* padding-left: 20px; */
   padding: 8px 8px 8px 20px;
+  background-color: var(--cardDivBg);
+  color: var(--cardDivColor);
 }
 .taskContainer{
   display: flex;
@@ -230,16 +252,17 @@ button:hover{
 .todayDp{
   height: 30px;
   width: 30px;
-  background-color: white;
+  background-color: var(--whiteColor);
+  color: var(--cardDivBg);
   text-align: center;
   margin: 10px;
   padding-top: 10px;
   border-radius: 10px;
 }
 
-.incompleteTask{
-  background-color: #fafbfd;
-}
+/* .incompleteTask{
+  background-color: var(--bluishWhiteColor);
+} */
 .taskName{
   width: 16rem;
   text-align: center;
@@ -271,24 +294,35 @@ ul{
   font-size: 1.3rem;
   font-weight: 500;
   width: 12rem;
+  color: var(--colorBlack);
 }
+
+#userName:hover{
+  cursor: pointer;
+}
+
 #mySettings{
   border: none;
   background-color: transparent;
-  color: #f8d57e;
+  color: var(--buttonBgColor);
   font-weight: bolder;
   font-size: 0.9rem;
 }
 
+#mySettings:hover{
+  cursor: pointer;
+}
 #userPic{
   width: 50px;
   height: 50px;
-  border-radius: 77% 26% 49% 51% / 63% 24% 89% 36% ;
-   
+  border-radius: 77% 26% 49% 51% / 63% 24% 89% 36% ; 
+}
+#userPic:hover{
+  cursor: pointer;
 }
 
 .cardSec{
-  background-color: #fafbfd;
+  background-color: var(--bluishWhiteColor);
   width: 12rem;
   margin-top: 20px;
   border-radius: 15px;
@@ -298,7 +332,8 @@ ul{
   width: 20rem;
   height: 12rem;
 }
-#clock{
+#clock:hover{
+  cursor: pointer;
   /* padding: 20px; */
 }
 #timeSec{
@@ -323,4 +358,90 @@ ul{
 
 #taskSection h3{
   font-size: 30px;
+}
+
+.modalContainer{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+  z-index: 9999; 
+}
+.modalContent{
+  border-radius: 10px;
+  position: absolute; /* Position the modal relative to the modal container */
+  top: 50%; /* Center the modal vertically */
+  left: 50%; /* Center the modal horizontally */
+  transform: translate(-50%, -50%); /* Center the modal */
+  background-color: #fefefe;
+  padding: 40px;
+  border: 1px solid #888;
+}
+
+#weeklyTaskContent{
+  height: 25.4rem;
+
+}
+
+/* Reset */
+input{
+  display: block;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.1);
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+#formBtn{
+  background-color: var(--buttonBgColor);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: var(--whiteColor);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#cancelBtn {
+  position: absolute;
+  top: 16px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #aaa;
+}
+
+#cancelBtn:hover {
+  color: #555;
+}
+#todaySchedule{
+  overflow-x: auto;
+  height: 38rem;
+}
+
+
+select{
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+.settingBtn{
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 10px;
+  border: none;
+  background-color: var(--buttonBgColor);
+  font-weight: bold;
+  color: var(--whiteColor);
+  border-radius: 10px;
 }

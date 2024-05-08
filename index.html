@@ -16,7 +16,7 @@
   <main>
     <section id="weeklyTask">
       <div id="head">
-        <button class="addWeeklyTask">+</button>
+        <button id="addWeeklyTask" class="addWeeklyTask">+</button>
         <span id="taskly">taskly</span><br>
       </div>
       <div id="titleTest">
@@ -24,23 +24,7 @@
         <p id="viewAllWeekly">View All</p>
       </div>
       <div id="weeklyTaskContent">
-        <div class="weeklyTask">
-          <span class="weeklyTaskDp"><i class="fa-solid fa-user-doctor"></i></span>
-          <div class="content">
-            <h3 class="weeklyTaskHeading">Call doctor for test</h3>
-            <p class="date">15 Mar 2020-9:00AM</p>
-            <p class="taskType">Personal</p>
-            <p class="taskDescription">Ask for blood tests and GYM certificate.</p>
-          </div>
-        </div>
-        <div class="weeklyTask">
-          <span class="weeklyTaskDp"><i class="fa-solid fa-user-doctor"></i></span>
-          <div class="content">
-            <h3 class="weeklyTaskHeading">Beatrice's bday</h3>
-            <p class="date">22 Mar 2020</p>
-          </div>
-        </div>
-        <div class="addWeeklyTaskDiv">
+        <div id="nowIamTierd" class="addWeeklyTaskDiv">
           <button id="addWeeklyTaskbtn">+</button>
           <h3 class="weeklyTaskHeading">Add new Weekly pin</h3>
         </div>
@@ -104,7 +88,7 @@
     <section id="midSection">
       <div id="fixedDiv">  
         <p id="fixed">Today's Schedule</p>
-        <button style="margin-right: 3rem; width: 50px; height: 50px;" class="addWeeklyTask">+</button>
+        <button style="margin-right: 3rem; width: 50px; height: 50px;" class="addWeeklyTask" id="addTodayTask">+</button>
       </div>
       <div id="todayDate">
         <p id="dateText">Thursday 11</p>
@@ -117,61 +101,7 @@
         </button>
       </div>
       <div id="todaySchedule">
-        <div class="completedTask cardDiv">
-          
-          <div class="taskContainer">
-            <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
-          <p class="taskName">Wake up Buddy </p>
-          <p class="taskTime">7:00 AM</p>
-        </div>
-        </div>
-        <div class="completedTask  cardDiv">
-                    <div class="taskContainer">
-          <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
-<p class="taskName">Morning Yoga </p>
-          <p class="taskTime">8:00 AM</p>
-        </div>
-        </div>
-        <div class="incompleteTask cardDiv">
-                    <div class="taskContainer">
-          <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
-<p class="taskName">Morning Yoga </p>
-          <p class="taskTime">8:00 AM</p>
-          </div>
-          <ul>
-            <li>Squat 10×3 </li>
-            <li>Push up 10×3</li>
-            <li>Push up 10×3</li>
-          </ul>
-      </div>
-      <div class="incompleteTask cardDiv">
-                <div class="taskContainer">
-        <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
-<p class="taskName">shift project kick off pt.1  </p>
-        <p class="taskTime">10:00 AM</p>
-        </div>
-        <p class="todayDescription">Zoom call, kick off with Elena And Jardan from Shift</p>
-
-    </div>
-    <div class="incompleteTask cardDiv">
-            <div class="taskContainer">
-      <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
-<p class="taskName">Skype Sushi</p>
-      <p class="taskTime">12:30 AM</p>
-      </div>
-      <p class="todayDescription">Lunch with Ally, fight this quarantine with humor!</p>
-  </div>
-  
-  <div class="incompleteTask cardDiv">
-        <div class="taskContainer">
-    <span class="todayDp"><i class="fa-regular fa-clock"></i></span>
-<p class="taskName">Dribbble Shot</p>
-    <p class="taskTime">2:00 PM</p>
-    </div>
-    <p class="todayDescription">Working a new shot !!</p>
-</div>
-
-
+        
 
 
 
@@ -218,7 +148,6 @@
 
 
     </section>
-
 
 
 
