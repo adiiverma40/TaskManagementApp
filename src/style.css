@@ -182,7 +182,7 @@ main{
     color:var(--buttonBgColor);
 
   }
-  .highlight {
+  .today {
     background-color:var(--buttonBgColor);
     
   }
@@ -266,6 +266,8 @@ button:hover{
 .taskName{
   width: 16rem;
   text-align: center;
+  font-size: 18px;
+  font-weight: 600;
 }
 .taskTime{
   text-align: right;
@@ -366,9 +368,10 @@ ul{
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
   z-index: 9999; 
+  overflow: hidden;
 }
 .modalContent{
   border-radius: 10px;
@@ -379,6 +382,7 @@ ul{
   background-color: #fefefe;
   padding: 40px;
   border: 1px solid #888;
+  
 }
 
 #weeklyTaskContent{

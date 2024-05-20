@@ -43,6 +43,7 @@
         </div>
         <div id="caldiv">
           <table class="calendar">
+            <thead>
             <tr>
               <th>Sun</th>
               <th>Mon</th>
@@ -52,33 +53,11 @@
               <th>Fri</th>
               <th>Sat</th>
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-              <td>10</td>
-              <td class="highlight">11</td>
-              <td>12</td>
-            </tr>
-            <tr>
-              <td>13</td>
-              <td>14</td>
-              <td>15</td>
-              <td>16</td>
-              <td>17</td>
-              <td>18</td>
-              <td>19</td>
-            </tr>
+          </thead>
+          <tbody id="calendar-body">
+
+          </tbody>  
+          
           </table>
         </div>
       </div>
@@ -86,13 +65,14 @@
 
 
     <section id="midSection">
-      <div id="fixedDiv">  
+      <div id="fixedDiv">
         <p id="fixed">Today's Schedule</p>
-        <button style="margin-right: 3rem; width: 50px; height: 50px;" class="addWeeklyTask" id="addTodayTask">+</button>
+        <button style="margin-right: 3rem; width: 50px; height: 50px;" class="addWeeklyTask"
+          id="addTodayTask">+</button>
       </div>
       <div id="todayDate">
         <p id="dateText">Thursday 11</p>
-        <button  style="font-size: 10px; margin-left: 6px; width: 20px; height: 20px;" id="leftMonth">
+        <button style="font-size: 10px; margin-left: 6px; width: 20px; height: 20px;" id="leftMonth">
           <i class="fa-solid fa-arrow-left">
           </i>
         </button>
@@ -101,42 +81,29 @@
         </button>
       </div>
       <div id="todaySchedule">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </section>
     <section id="userSection">
       <div id="profile">
         <div id="set">
-        <p id="userName">
-          Mark Collins
-          
-        </p>
-        <p id="mySettings">My settings</p>
-      </div>
-        <img src="https://avatars.githubusercontent.com/u/146183407?s=400&u=c10afae4a7dcf6111bb84f8b00ea94d1d85820ce&v=4" alt="User Picture" id="userPic">
+          <p id="userName">
+            change your name by clicking my settings
+          </p>
+          <p id="mySettings">My settings</p>
+        </div>
+        <img
+          src="https://avatars.githubusercontent.com/u/146183407?s=400&u=c10afae4a7dcf6111bb84f8b00ea94d1d85820ce&v=4"
+          alt="User Picture" id="userPic">
       </div>
       <div id="music" class="cardSec">
 
 
       </div>
-      <div id="clock" class="cardSec" >
+      <div id="clock" class="cardSec">
         <p id="timeSec">10:10 AM</p>
         <p id="weather"><i class="fa-solid fa-cloud-sun"></i>Now is almost Sunny</p>
-        
+
       </div>
       <div id="taskSection" class="cardSec">
         <h3>Unsleash the freelancer super power </h3>
