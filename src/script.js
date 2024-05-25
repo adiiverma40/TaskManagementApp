@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
   loadWeeklyTask();
   loadSettings();
   getTodayDate();
-  calendar4();
+  
 });
 
 function getTodayDate() {
@@ -494,181 +494,105 @@ function darkTheme(){
   root.style.setProperty("--weeklyTaskBg","#272829")
 }
 
-function calendar(){
-const today = new Date();
-  const currentMonth = today.getMonth();
-  const currentYear = today.getFullYear();
-  const currentDate = today.getDate();
-
-  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-  const calendarBody = document.getElementById('calendar-body');
-  let dayCounter = 1;
-
-  for (let i = 0; i < 6; i++) {
-    const row = document.createElement('tr');
-
-    for (let j = 0; j < 7; j++) {
-      const cell = document.createElement('td');
-
-      if (i === 0 && j < firstDayOfMonth) {
-        cell.textContent = '';
-      } else if (dayCounter > daysInMonth) {
-        cell.textContent = '';
-      } else {
-        cell.textContent = dayCounter;
-
-        if (dayCounter === currentDate) {
-          cell.classList.add('today');
-        }
-
-        dayCounter++;
-      }
-
-      row.appendChild(cell);
-    }
-
-    calendarBody.appendChild(row);
-  }
-}
-function calendar1(){
-  const today = new Date();
-  const currentMonth = today.getMonth();
-  const currentYear = today.getFullYear();
-  const currentDate = today.getDate();
-
-  // Get the first day of the current month
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
   
-  // Get the last day of the current month
-  const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+// function updateCalendar() {
+//   let currentDate = new Date();
+//    let startDay = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())); // Start of the current week
 
-  // Calculate the starting date for the two-week period
-  let startDate = currentDate - 7;
-  if (startDate < 1) {
-    startDate = 1; // If the starting date is before the first day of the month, set it to 1
-  }
+//   let calendar = document.querySelector("#calendar-body");
+//   let month_year = document.querySelector("#month-year");
+//   let months = [
+//       "January", "February", "March", "April", "May", "June",
+//       "July", "August", "September", "October", "November", "December"
+//   ];
 
-  const calendarBody = document.getElementById('calendar-body');
-  let dayCounter = startDate;
+//   let year = startDay.getFullYear();
+//   let month = startDay.getMonth();
+//   month_year.innerText = `${months[month]}, ${year}`;
 
-  for (let i = 0; i < 2; i++) {
-    const row = document.createElement('tr');
+//   // Clear the existing calendar content
+//   // calendar.innerHTML = '';
 
-    for (let j = 0; j < 7; j++) {
-      const cell = document.createElement('td');
+//   // Populate the calendar with two weeks of dates
+//   for (let week = 0; week < 2; week++) {
+//       let tr = document.createElement("tr");
+//       for (let day = 0; day < 7; day++) {
+//           let td = document.createElement("td");
+//           let currentDay = new Date(startDay);
+//           currentDay.setDate(startDay.getDate() + week * 7 + day);
+          
+//           if (currentDay.getDate() === new Date().getDate() &&
+//               currentDay.getMonth() === new Date().getMonth() &&
+//               currentDay.getFullYear() === new Date().getFullYear()) {
+//               td.classList.add("today");
+//           }
 
-      // Check if the day counter exceeds the last day of the month
-      if (dayCounter > lastDayOfMonth) {
-        cell.textContent = '';
-      } else {
-        cell.textContent = dayCounter;
+//           td.innerText = currentDay.getDate();
+//           tr.appendChild(td);
+//       }
+//       calendar.appendChild(tr);
+//   }
+// }
 
-        // Add the 'today' class if it's the current date
-        if (dayCounter === currentDate) {
-          cell.classList.add('today');
+// // document.querySelector("#leftMonth").addEventListener("click", () => {
+// //     startDay.setDate(startDay.getDate() - 14); // Move back by two weeks
+// //     updateCalendar(startDay);
+// // });
+
+// // document.querySelector("#rightMonth").addEventListener("click", () => {
+// //     startDay.setDate(startDay.getDate() + 14); // Move forward by two weeks
+// //     updateCalendar(startDay);
+// // });
+
+// updateCalendar();
+
+let currentDate = new Date();
+let startDay = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())); // Start of the current week
+
+function updateCalendar(startDate) {
+    let calendar = document.querySelector("#calendar-body");
+    let month_year = document.querySelector("#month-year");
+    let months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    let year = startDate.getFullYear();
+    let month = startDate.getMonth();
+    month_year.textContent = `${months[month]}, ${year}`;
+
+    // Clear the existing calendar content
+    calendar.innerHTML = '';
+
+    // Populate the calendar with two weeks of dates
+    for (let week = 0; week < 2; week++) {
+        let tr = document.createElement("tr");
+        for (let day = 0; day < 7; day++) {
+            let td = document.createElement("td");
+            let currentDay = new Date(startDate);
+            currentDay.setDate(startDate.getDate() + week * 7 + day);
+            
+            if (currentDay.getDate() === new Date().getDate() &&
+                currentDay.getMonth() === new Date().getMonth() &&
+                currentDay.getFullYear() === new Date().getFullYear()) {
+                td.classList.add("today");
+            }
+
+            td.innerText = currentDay.getDate();
+            tr.appendChild(td);
         }
-
-        dayCounter++;
-      }
-
-      row.appendChild(cell);
+        calendar.appendChild(tr);
     }
-
-    calendarBody.appendChild(row);
-  }
 }
 
-function calendar2(){
-  const today = new Date();
-  const currentMonth = today.getMonth();
-  const currentYear = today.getFullYear();
-  const currentDate = today.getDate();
+document.querySelector("#leftMonth").addEventListener("click", () => {
+    startDay.setDate(startDay.getDate() - 14); // Move back by two weeks
+    updateCalendar(startDay);
+});
 
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-  const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+document.querySelector("#rightMonth").addEventListener("click", () => {
+    startDay.setDate(startDay.getDate() + 14); // Move forward by two weeks
+    updateCalendar(startDay);
+});
 
-  let startDate = currentDate - 7;
-  if (startDate < 1) {
-    startDate = 1;
-  }
-
-  while (new Date(currentYear, currentMonth, startDate).getDay() !== 1) {
-    startDate--;
-    if (startDate < 1) {
-      startDate = 1;
-      break;
-    }
-  }
-
-  const calendarBody = document.getElementById('calendar-body');
-  let dayCounter = startDate;
-
-  for (let i = 0; i < 2; i++) {
-    const row = document.createElement('tr');
-
-    for (let j = 0; j < 7; j++) {
-      const cell = document.createElement('td');
-
-      if (dayCounter > lastDayOfMonth) {
-        cell.textContent = '';
-      } else {
-        cell.textContent = dayCounter;
-
-        if (dayCounter === currentDate) {
-          cell.classList.add('today');
-        }
-
-        dayCounter++;
-      }
-
-      row.appendChild(cell);
-    }
-
-    calendarBody.appendChild(row);
-  }
-}
-
-function calendar3(){
-  const today = new Date();
-  const currentMonth = today.getMonth();
-  const currentYear = today.getFullYear();
-  const currentDate = today.getDate();
-
-  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-  // Find the first day of the month
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-  // Get the name of the day for the first day of the month
-  const firstDayName = daysOfWeek[firstDayOfMonth];
-
-  // Output the day name for verification
-  console.log("The first day of the month is:", firstDayName);
-
-  const calendarBody = document.getElementById('calendar-body');
-  let dayCounter = 1;
-
-  for (let i = 0; i < 6; i++) {
-    const row = document.createElement('tr');
-
-    for (let j = 0; j < 7; j++) {
-      const cell = document.createElement('td');
-
-      if (i === 0 && j < daysOfWeek.indexOf(firstDayName)) {
-        cell.textContent = '';
-      } else {
-        cell.textContent = dayCounter;
-
-        if (dayCounter === currentDate) {
-          cell.classList.add('today');
-        }
-
-        dayCounter++;
-      }
-
-      row.appendChild(cell);
-    }
-
-    calendarBody.appendChild(row);
-  }
-}
+updateCalendar(startDay);

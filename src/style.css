@@ -25,7 +25,7 @@ main{
 #weeklyTask{
   background-color: var(--bluishWhiteColor); 
   width: 30%;
-  height: 800%;
+  height: 108.5vh;
   margin: 0;
   padding-left: 2rem;
 }
