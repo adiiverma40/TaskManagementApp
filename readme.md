@@ -26,6 +26,10 @@ To run Taskly locally, follow these steps:
 2. View and manage your tasks in the respective sections.
 3. Use the theme toggle to switch between light and dark themes.
 4. Store your name and picture in the settings menu.
+5. **Weather Details:** Taskly utilizes the API Ninja Weather API to provide users with weather information. To access weather details:
+    - Sign up for an API key from [API Ninja Weather](https://apilist.fun/api/weather).
+    - Replace the placeholder API key in the `weather.js` file with your own API key.
+    - Ensure that your API key is properly configured and secured.
 
 ## Credits
 
