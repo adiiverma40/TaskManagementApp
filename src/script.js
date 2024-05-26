@@ -15,7 +15,8 @@ window.addEventListener("load", () => {
   loadWeeklyTask();
   loadSettings();
   getTodayDate();
-  
+  weatherForecast()
+
 });
 
 function getTodayDate() {
@@ -25,7 +26,7 @@ function getTodayDate() {
   const year = today.getFullYear();
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const dayName = days[today.getDay()];
-  date.textContent =`${dayName} ${day}`
+  date.textContent = `${dayName} ${day}`
 }
 
 
@@ -275,8 +276,8 @@ function loadWeeklyTask() {
 const viewWeeklyTask = document.querySelector("#viewAllWeekly");
 
 viewWeeklyTask.addEventListener("click", () => {
- viewWeeklyModal()
- console.log("View all weekly tasks")
+  viewWeeklyModal()
+  console.log("View all weekly tasks")
 });
 
 function viewWeeklyModal() {
@@ -372,15 +373,15 @@ function openSettingsMenu() {
   const userImage = settingMenu.querySelector("#userImage");
   const theme = settingMenu.querySelector("#theme");
   const changeSettingsBtn = settingMenu.querySelector("#changeSettings");
-  changeSettingsBtn.addEventListener("click", ()=>{
+  changeSettingsBtn.addEventListener("click", () => {
     changeSettings(username);
     saveSettings(username, userImage, theme);
     settingMenu.style.display = "none";
-    
-    if(isDark){
+
+    if (isDark) {
       whiteTheme();
     }
-    else{darkTheme();}
+    else { darkTheme(); }
 
   })
   const cancelBtn = settingMenu.querySelector("#cancelBtn");
@@ -392,7 +393,7 @@ function openSettingsMenu() {
   clearTasksBtn.addEventListener("click", () => {
     clearAllTasks();
   });
-  
+
   main.appendChild(settingMenu);
 }
 
@@ -402,7 +403,7 @@ function clearAllTasks() {
   location.reload();
 }
 
-function changeSettings(username){
+function changeSettings(username) {
   document.querySelector("#userName").textContent = username.value;
 
 }
@@ -418,50 +419,42 @@ function saveSettings(username, userImage, theme) {
   if (username.value && userImage.value !== "") {
     settings.push(settingsData);
   }
-  else if(username.value !== ""){
+  else if (username.value !== "") {
     settings.forEach((setting) => {
       setting.username = username.value;
       setting.theme = theme.value;
     });
   }
-  
-  else if(userImage.value !== ""){
+
+  else if (userImage.value !== "") {
     settings.forEach((setting) => {
       setting.userImage = userImage.value;
       setting.theme = theme.value;
     });
   }
-   else {
-    // Only update the theme value for existing settings
+  else {
     settings.forEach((setting) => {
       setting.theme = theme.value;
     });
   }
-
   localStorage.setItem("settings", JSON.stringify(settings));
   location.reload();
 }
-
-
-
 let isDark = false;
-
-
-function loadSettings(){
+function loadSettings() {
   let storedSettings = JSON.parse(localStorage.getItem("settings")) || [];
   console.log("Stored settings:", storedSettings);
   storedSettings.forEach((setting) => {
     document.querySelector("#userName").textContent = setting.username;
     document.querySelector("#userPic").src = setting.userImage;
-    if(setting.theme ==="light"){
+    if (setting.theme === "light") {
       whiteTheme();
       isDark = false;
     }
-    else if(setting.theme ==="dark"){
+    else if (setting.theme === "dark") {
       darkTheme();
       isDark = true;
     }
-    // document.querySelector("#theme").textContent = setting.theme;
   });
 }
 
@@ -476,123 +469,113 @@ function whiteTheme() {
   root.style.setProperty("--bluishWhiteColor", "#fafbfd");
   root.style.setProperty("--weeklyTaskBg", "white");
   let todayDp = document.querySelectorAll(".todayDp");
-  todayDp.forEach(dp =>{
+  todayDp.forEach(dp => {
     dp.style.backgroundColor = "white";
     dp.style.color = "black";
   })
 }
 
-function darkTheme(){
-  secSection.style.backgroundColor ="#272829";
-  userSection.style.backgroundColor ="#272829";
-  main.style.backgroundColor ="#272829";
+function darkTheme() {
+  secSection.style.backgroundColor = "#272829";
+  userSection.style.backgroundColor = "#272829";
+  main.style.backgroundColor = "#272829";
   document.querySelector("#fixed").style.color = "#FFF6E0";
-  root.style.setProperty("--cardDivColor","#FFF6E0");
-  root.style.setProperty("--cardDivBg","#61677A");
-  root.style.setProperty("--colorBlack","#FFF6E0");
-  root.style.setProperty("--bluishWhiteColor","#61677A");
-  root.style.setProperty("--weeklyTaskBg","#272829")
+  root.style.setProperty("--cardDivColor", "#FFF6E0");
+  root.style.setProperty("--cardDivBg", "#61677A");
+  root.style.setProperty("--colorBlack", "#FFF6E0");
+  root.style.setProperty("--bluishWhiteColor", "#61677A");
+  root.style.setProperty("--weeklyTaskBg", "#272829")
 }
-
-  
-// function updateCalendar() {
-//   let currentDate = new Date();
-//    let startDay = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())); // Start of the current week
-
-//   let calendar = document.querySelector("#calendar-body");
-//   let month_year = document.querySelector("#month-year");
-//   let months = [
-//       "January", "February", "March", "April", "May", "June",
-//       "July", "August", "September", "October", "November", "December"
-//   ];
-
-//   let year = startDay.getFullYear();
-//   let month = startDay.getMonth();
-//   month_year.innerText = `${months[month]}, ${year}`;
-
-//   // Clear the existing calendar content
-//   // calendar.innerHTML = '';
-
-//   // Populate the calendar with two weeks of dates
-//   for (let week = 0; week < 2; week++) {
-//       let tr = document.createElement("tr");
-//       for (let day = 0; day < 7; day++) {
-//           let td = document.createElement("td");
-//           let currentDay = new Date(startDay);
-//           currentDay.setDate(startDay.getDate() + week * 7 + day);
-          
-//           if (currentDay.getDate() === new Date().getDate() &&
-//               currentDay.getMonth() === new Date().getMonth() &&
-//               currentDay.getFullYear() === new Date().getFullYear()) {
-//               td.classList.add("today");
-//           }
-
-//           td.innerText = currentDay.getDate();
-//           tr.appendChild(td);
-//       }
-//       calendar.appendChild(tr);
-//   }
-// }
-
-// // document.querySelector("#leftMonth").addEventListener("click", () => {
-// //     startDay.setDate(startDay.getDate() - 14); // Move back by two weeks
-// //     updateCalendar(startDay);
-// // });
-
-// // document.querySelector("#rightMonth").addEventListener("click", () => {
-// //     startDay.setDate(startDay.getDate() + 14); // Move forward by two weeks
-// //     updateCalendar(startDay);
-// // });
-
-// updateCalendar();
-
 let currentDate = new Date();
 let startDay = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())); // Start of the current week
 
 function updateCalendar(startDate) {
-    let calendar = document.querySelector("#calendar-body");
-    let month_year = document.querySelector("#month-year");
-    let months = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
+  let calendar = document.querySelector("#calendar-body");
+  let month_year = document.querySelector("#month-year");
+  let months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
 
-    let year = startDate.getFullYear();
-    let month = startDate.getMonth();
-    month_year.textContent = `${months[month]}, ${year}`;
+  let year = startDate.getFullYear();
+  let month = startDate.getMonth();
+  month_year.textContent = `${months[month]}, ${year}`;
 
-    // Clear the existing calendar content
-    calendar.innerHTML = '';
+  // Clear the existing calendar content
+  calendar.innerHTML = '';
 
-    // Populate the calendar with two weeks of dates
-    for (let week = 0; week < 2; week++) {
-        let tr = document.createElement("tr");
-        for (let day = 0; day < 7; day++) {
-            let td = document.createElement("td");
-            let currentDay = new Date(startDate);
-            currentDay.setDate(startDate.getDate() + week * 7 + day);
-            
-            if (currentDay.getDate() === new Date().getDate() &&
-                currentDay.getMonth() === new Date().getMonth() &&
-                currentDay.getFullYear() === new Date().getFullYear()) {
-                td.classList.add("today");
-            }
+  // Populate the calendar with two weeks of dates
+  for (let week = 0; week < 2; week++) {
+    let tr = document.createElement("tr");
+    for (let day = 0; day < 7; day++) {
+      let td = document.createElement("td");
+      let currentDay = new Date(startDate);
+      currentDay.setDate(startDate.getDate() + week * 7 + day);
 
-            td.innerText = currentDay.getDate();
-            tr.appendChild(td);
-        }
-        calendar.appendChild(tr);
+      if (currentDay.getDate() === new Date().getDate() &&
+        currentDay.getMonth() === new Date().getMonth() &&
+        currentDay.getFullYear() === new Date().getFullYear()) {
+        td.classList.add("today");
+      }
+
+      td.innerText = currentDay.getDate();
+      tr.appendChild(td);
     }
+    calendar.appendChild(tr);
+  }
 }
 
 document.querySelector("#leftMonth").addEventListener("click", () => {
-    startDay.setDate(startDay.getDate() - 14); // Move back by two weeks
-    updateCalendar(startDay);
+  startDay.setDate(startDay.getDate() - 14); // Move back by two weeks
+  updateCalendar(startDay);
 });
 
 document.querySelector("#rightMonth").addEventListener("click", () => {
-    startDay.setDate(startDay.getDate() + 14); // Move forward by two weeks
-    updateCalendar(startDay);
+  startDay.setDate(startDay.getDate() + 14); // Move forward by two weeks
+  updateCalendar(startDay);
 });
 
 updateCalendar(startDay);
+
+function weatherForecast() {
+  let weatherDetails = document.querySelector("#weatherDetails");
+  let city = "giridih";
+  let apiKey = `TX/0dHTw0EY9oBCuT0Jckg==6K93kCvU7AwiOuXY`
+  async function fetchWeather() {
+    let promise = await fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {
+      method: 'GET',
+      headers: {
+        'X-Api-Key': apiKey,
+        'Content-Type': 'application/json'
+      }
+    })
+    let data = await promise.json();
+    let temp = data.temp;
+
+    console.log(data,temp);
+    weatherDetails.innerText = `Temperature is ${temp}°C `
+  }
+  fetchWeather();
+}
+
+
+function updateTime() {
+  // Get current time
+  var now = new Date();
+  
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  
+  var am_pm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12; 
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+  
+  var timeString = hours + ":" + minutes + ":" + seconds + " " + am_pm;
+  
+  document.getElementById("time").innerHTML = timeString;
+}
+updateTime();
+setInterval(updateTime, 1000);

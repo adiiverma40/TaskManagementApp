@@ -338,7 +338,7 @@ ul{
   cursor: pointer;
   /* padding: 20px; */
 }
-#timeSec{
+#time{
   font-size: 2rem;
   text-align: left;
   
@@ -347,6 +347,7 @@ ul{
 #weather{
   margin-top: 10px;
   font-size: 18px;
+  display: flex;
 }
 #taskSection img{
   width: 100px;
